@@ -1,9 +1,9 @@
-#[allow(unused_variables, unused_assignments)]
+#[allow(unused_variables, unused_assignments, dead_code)]
 fn main() {
-    let v: u8 = 7245_u16 as u8;
-    println!("Success, {}", v)
-
-    // Bit overflow example if converting to smaller bit arrangement
+    assert_eq!(i8::MAX, 127);
+    assert_eq!(u8::MAX, 255)
 }
 
-// default type of x is i32, however if undefined, can inherit type of assignee (y: u32 = x: undefined_type)
+fn _type_of<T>(_: &T) -> String {
+    format!("{}", std::any::type_name::<T>())
+}
