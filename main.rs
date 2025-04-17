@@ -1,8 +1,10 @@
 fn main() {
-    define_x();
-}
-
-fn define_x() {
-    let x: &str = "Hello";
-    println!("{}, world", x);
+    let x: i32 = 5;
+    {
+        let x = 12;
+        assert_eq!(x, 12);
+    }
+    assert_eq!(x, 5);
+    let x = 42;
+    println!("{}", x)
 }
